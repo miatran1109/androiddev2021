@@ -6,4 +6,17 @@
     android:layout_height="match_parent"
     tools:context=".WeatherActivity">
 
+<<<<<<< HEAD
+    <com.google.android.material.tabs.TabLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:ignore="MissingConstraints"
+        android:id="@+id/tab"/>
+
+    <androidx.viewpager.widget.ViewPager
+        android:id="@+id/pager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+=======
+>>>>>>> parent of 53b1482... Prac 5
 </androidx.constraintlayout.widget.ConstraintLayout>
