@@ -6,7 +6,7 @@
     android:layout_marginLeft="10dp"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="@color/that_green"
+    android:background="@drawable/frame"
     tools:context=".WeatherFragment">
 
     <!-- TODO: Update blank fragment layout -->
@@ -14,15 +14,15 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="10dp"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="20dp"
         android:layout_alignParentLeft="true"
-        android:text="12C\nStorming" />
+        android:text="12C\nCloudy" />
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentRight="true"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="20dp"
         android:gravity="right"
         android:layout_marginRight="10dp"
         android:text="Hanoi" />
