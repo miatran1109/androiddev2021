@@ -29,7 +29,7 @@
                 android:layout_weight="1"
                 android:gravity="center_horizontal"
                 android:paddingLeft="25dp"
-                android:text="Mon" />
+                android:text="@string/mon" />
 
             <ImageView
                 android:layout_width="150dp"
@@ -48,7 +48,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:gravity="center_horizontal"
-                    android:text="Mostly cloudy" />
+                    android:text="@string/cloudy" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -71,7 +71,7 @@
                 android:layout_weight="1"
                 android:gravity="center_horizontal"
                 android:paddingLeft="25dp"
-                android:text="Tue" />
+                android:text="@string/tue" />
 
             <ImageView
                 android:layout_width="150dp"
@@ -90,7 +90,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:gravity="center_horizontal"
-                    android:text="Mostly cloudy" />
+                    android:text="@string/cloudy"  />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -113,7 +113,7 @@
                 android:layout_weight="1"
                 android:gravity="center_horizontal"
                 android:paddingLeft="25dp"
-                android:text="Wed" />
+                android:text="@string/wed" />
 
             <ImageView
                 android:layout_width="150dp"
@@ -132,7 +132,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:gravity="center_horizontal"
-                    android:text="Mostly cloudy" />
+                    android:text="@string/cloudy"/>
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -155,7 +155,7 @@
                 android:layout_weight="1"
                 android:gravity="center_horizontal"
                 android:paddingLeft="25dp"
-                android:text="Thu" />
+                android:text="@string/thu" />
 
             <ImageView
                 android:layout_width="150dp"
@@ -174,7 +174,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:gravity="center_horizontal"
-                    android:text="Mostly cloudy" />
+                    android:text="@string/cloudy"/>
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -197,7 +197,7 @@
                 android:layout_weight="1"
                 android:gravity="center_horizontal"
                 android:paddingLeft="25dp"
-                android:text="Fri" />
+                android:text="@string/fri" />
 
             <ImageView
                 android:layout_width="150dp"
@@ -216,7 +216,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:gravity="center_horizontal"
-                    android:text="Mostly cloudy" />
+                    android:text="@string/cloudy"/>
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -239,7 +239,7 @@
                 android:layout_weight="1"
                 android:gravity="center_horizontal"
                 android:paddingLeft="25dp"
-                android:text="Sat" />
+                android:text="@string/sat" />
 
             <ImageView
                 android:layout_width="150dp"
@@ -258,7 +258,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:gravity="center_horizontal"
-                    android:text="Mostly cloudy" />
+                    android:text="@string/cloudy"/>
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -281,7 +281,7 @@
                 android:layout_weight="1"
                 android:gravity="center_horizontal"
                 android:paddingLeft="25dp"
-                android:text="Sun" />
+                android:text="@string/sun" />
 
             <ImageView
                 android:layout_width="150dp"
@@ -300,7 +300,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:gravity="center_horizontal"
-                    android:text="Mostly cloudy" />
+                    android:text="@string/cloudy"  />
 
                 <TextView
                     android:layout_width="wrap_content"
