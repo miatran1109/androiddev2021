@@ -18,6 +18,11 @@ public class WeatherActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_weather);
 
+        WeatherFragment weatherFragment = new WeatherFragment();
+
+        getSupportFragmentManager().beginTransaction()
+                .add(android.R.id.content, weatherFragment).commit();
+
         ForecastFragment forecastFragment = new ForecastFragment();
 
         getSupportFragmentManager().beginTransaction()
