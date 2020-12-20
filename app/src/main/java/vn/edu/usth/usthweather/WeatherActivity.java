@@ -3,9 +3,11 @@ package vn.edu.usth.usthweather;
 import androidx.appcompat.app.AppCompatActivity;
 
 import androidx.fragment.app.FragmentManager;
+import androidx.viewpager.widget.PagerAdapter;
 import androidx.viewpager.widget.ViewPager;
 
 
+import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.util.Log;
 
@@ -27,6 +29,12 @@ public class WeatherActivity extends AppCompatActivity {
 //
 //        getSupportFragmentManager().beginTransaction()
 //                .add(android.R.id.content, forecastFragment).commit();
+
+        PagerAdapter adapter = new HomeFragmentPagerAdapter(
+                getSupportFragmentManager());
+        ViewPager pager = (ViewPager) findViewById(R.id.weather_activity);
+        pager.setOffscreenPageLimit(3);
+        pager.setAdapter(adapter);
 
     }
 
