@@ -65,15 +65,15 @@ public class ForecastFragment extends Fragment {
         View v = inflater.inflate(R.layout.fragment_forecast, container, false);
 
 
-        LinearLayout forecast_layout = (LinearLayout) v.findViewById(R.id.forecast_layout);
-
-        TextView day_text = new TextView(this.getContext());
-        day_text.setText("Thursday");
-
-        ImageView icon = new ImageView(this.getContext());
-        icon.setImageResource(R.drawable.cloudy);
-
-        v.setBackgroundColor(0x20FF0000);
+//        LinearLayout forecast_layout = (LinearLayout) v.findViewById(R.id.forecast_layout);
+//
+//        TextView day_text = new TextView(this.getContext());
+//        day_text.setText("Thursday");
+//
+//        ImageView icon = new ImageView(this.getContext());
+//        icon.setImageResource(R.drawable.cloudy);
+//
+//        v.setBackgroundColor(0x20FF0000);
         return v;
     }
 }
