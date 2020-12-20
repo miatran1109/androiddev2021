@@ -30,12 +30,15 @@ public class WeatherActivity extends AppCompatActivity {
 //        getSupportFragmentManager().beginTransaction()
 //                .add(android.R.id.content, forecastFragment).commit();
 
+
         PagerAdapter adapter = new HomeFragmentPagerAdapter(
                 getSupportFragmentManager());
-        ViewPager pager = (ViewPager) findViewById(R.id.weather_activity);
-        pager.setOffscreenPageLimit(3);
-        pager.setAdapter(adapter);
+        ViewPager viewPager = findViewById(R.id.pager);
+        viewPager.setOffscreenPageLimit(3);
+        viewPager.setAdapter(adapter);
 
+        TabLayout tableLayout = findViewById(R.id.tabLayout);
+        tableLayout.setupWithViewPager(viewPager);
     }
 
     @Override

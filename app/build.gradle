@@ -38,10 +38,12 @@ dependencies {
     testImplementation 'junit:junit:4.+'
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
-    //noinspection GradleCompatible,GradleCompatible
-    compile 'com.android.support:design:24.2.1'
-    //noinspection GradleCompatible,GradleCompatible
-    compile 'com.android.support:support-v4:24.2.1'
+    //noinspection GradleCompatible
+    implementation "com.android.support:design:28.1.0"
+//    //noinspection GradleCompatible,GradleCompatible
+//    compile 'com.android.support:design:24.2.1'
+//    //noinspection GradleCompatible,GradleCompatible
+//    compile 'com.android.support:support-v4:24.2.1'
 
 }
 
