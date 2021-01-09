@@ -7,6 +7,8 @@ import androidx.fragment.app.FragmentManager;
 import androidx.viewpager.widget.PagerAdapter;
 import androidx.viewpager.widget.ViewPager;
 
+import android.graphics.Bitmap;
+import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Handler;
 import android.os.Looper;
@@ -53,39 +55,8 @@ public class WeatherActivity extends AppCompatActivity {
         TabLayout tableLayout = findViewById(R.id.tabLayout);
         tableLayout.setupWithViewPager(viewPager);
 
-//        MediaPlayer mediaPlayer = MediaPlayer.create(this, R.raw.rain);
-//        mediaPlayer.start();
-
-
-        final Handler handler = new Handler(Looper.getMainLooper()) {
-            @Override
-            public void handleMessage(Message msg) {
-                // This method is executed in main thread
-                String content = msg.getData().getString("server_response");
-                Toast.makeText(getApplicationContext(), content, Toast.LENGTH_SHORT).show();
-            }
-        };
-        Thread t = new Thread(new Runnable() {
-            @Override
-            public void run() {
-                // this method is run in a worker thread
-                try {
-                    // wait for 5 seconds to simulate a long network access
-                    Thread.sleep(1000);
-                }
-                catch (InterruptedException e) {
-                    e.printStackTrace();
-                }
-                // Assume that we got our data from server
-                Bundle bundle = new Bundle();
-                bundle.putString("server_response", "some sample json here");
-                // notify main thread
-                Message msg = new Message();
-                msg.setData(bundle);
-                handler.sendMessage(msg);
-            }
-        });
-        t.start();
+        MediaPlayer mediaPlayer = MediaPlayer.create(this, R.raw.rain);
+        mediaPlayer.start();
     }
 
     @Override
@@ -99,7 +70,38 @@ public class WeatherActivity extends AppCompatActivity {
         switch (item.getItemId()) {
             case R.id.action_refresh:
             {
-                Toast.makeText(getApplicationContext(), "Refreshing...", Toast.LENGTH_SHORT).show();
+                AsyncTask<String, Integer, Bitmap> task = new AsyncTask<String, Integer, Bitmap>() {
+                    @Override
+                    protected void onPreExecute() {
+                        // do some preparation here, if needed
+                    }
+                    @Override
+                    protected Bitmap doInBackground(String... params) {
+                        // This is where the worker thread's code is executed
+                        // params are passed from the execute() method call
+                        try {
+                            Thread.sleep(1000);
+                        } catch (InterruptedException e) {
+                            e.printStackTrace();
+                        }
+                        return null;
+                    }
+                    @Override
+                    protected void onProgressUpdate(Integer... values) {
+                        // This method is called in the main thread, so it's possible
+                        // to update UI to reflect the worker thread progress here.
+                        // In a network access task, this should update a progress bar
+                        // to reflect how many percent of data has been retrieved
+                    }
+                    @Override
+                    protected void onPostExecute(Bitmap bitmap) {
+                        // This method is called in the main thread. After #doInBackground returns
+                        // the bitmap data, we simply set it to an ImageView using ImageView.setImageBitmap()
+                        //                // Assume that we got our data from server
+                        Toast.makeText(getApplicationContext(), "some sample json here", Toast.LENGTH_SHORT).show();
+                    }
+                };
+                task.execute("http://ict.usth.edu.vn/wp-content/uploads/usth/usthlogo.png");
                 return true;
             }
             case R.id.action_settings:
