@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/weather_activity"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <Toolbar
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+       
+    </Toolbar>
+
+    <com.google.android.material.tabs.TabLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/tabLayout" />
+
+    <androidx.viewpager.widget.ViewPager
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/pager"
+        android:orientation="vertical">
+        <fragment
+            android:name="vn.edu.usth.usthweather.WeatherAndForecastFragment"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+    </androidx.viewpager.widget.ViewPager>
+</LinearLayout>

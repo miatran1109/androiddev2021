@@ -8,10 +8,15 @@ import androidx.viewpager.widget.ViewPager;
 
 
 import android.annotation.SuppressLint;
+import android.content.Intent;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.util.Log;
 
 import com.google.android.material.tabs.TabLayout;
+
+import java.io.IOException;
+import java.io.InputStream;
 
 public class WeatherActivity extends AppCompatActivity {
 
@@ -30,7 +35,6 @@ public class WeatherActivity extends AppCompatActivity {
 //        getSupportFragmentManager().beginTransaction()
 //                .add(android.R.id.content, forecastFragment).commit();
 
-
         PagerAdapter adapter = new HomeFragmentPagerAdapter(
                 getSupportFragmentManager());
         ViewPager viewPager = findViewById(R.id.pager);
@@ -39,6 +43,12 @@ public class WeatherActivity extends AppCompatActivity {
 
         TabLayout tableLayout = findViewById(R.id.tabLayout);
         tableLayout.setupWithViewPager(viewPager);
+
+
+
+
+        MediaPlayer music = MediaPlayer.create(this, R.raw.rain);
+        music.start();
     }
 
     @Override
