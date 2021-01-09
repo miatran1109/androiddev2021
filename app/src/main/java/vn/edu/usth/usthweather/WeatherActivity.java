@@ -1,11 +1,16 @@
 package vn.edu.usth.usthweather;
 
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
 import androidx.fragment.app.FragmentManager;
 import androidx.viewpager.widget.PagerAdapter;
 import androidx.viewpager.widget.ViewPager;
 
+import android.os.Build;
+import android.os.Handler;
+import android.os.Looper;
+import android.os.Message;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -48,8 +53,39 @@ public class WeatherActivity extends AppCompatActivity {
         TabLayout tableLayout = findViewById(R.id.tabLayout);
         tableLayout.setupWithViewPager(viewPager);
 
-        MediaPlayer mediaPlayer = MediaPlayer.create(this, R.raw.rain);
-        mediaPlayer.start();
+//        MediaPlayer mediaPlayer = MediaPlayer.create(this, R.raw.rain);
+//        mediaPlayer.start();
+
+
+        final Handler handler = new Handler(Looper.getMainLooper()) {
+            @Override
+            public void handleMessage(Message msg) {
+                // This method is executed in main thread
+                String content = msg.getData().getString("server_response");
+                Toast.makeText(getApplicationContext(), content, Toast.LENGTH_SHORT).show();
+            }
+        };
+        Thread t = new Thread(new Runnable() {
+            @Override
+            public void run() {
+                // this method is run in a worker thread
+                try {
+                    // wait for 5 seconds to simulate a long network access
+                    Thread.sleep(1000);
+                }
+                catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+                // Assume that we got our data from server
+                Bundle bundle = new Bundle();
+                bundle.putString("server_response", "some sample json here");
+                // notify main thread
+                Message msg = new Message();
+                msg.setData(bundle);
+                handler.sendMessage(msg);
+            }
+        });
+        t.start();
     }
 
     @Override
@@ -77,5 +113,6 @@ public class WeatherActivity extends AppCompatActivity {
         }
         return false;
     }
+
 }
 
