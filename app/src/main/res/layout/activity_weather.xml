@@ -4,19 +4,17 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
+
     <com.google.android.material.tabs.TabLayout
         android:id="@+id/tab"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="top"/>
+        android:layout_height="wrap_content" />
     <androidx.viewpager.widget.ViewPager
         xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:id="@+id/pager"
         android:orientation="vertical">
-
-
         <fragment
             android:name="vn.edu.usth.usthweather.WeatherAndForecastFragment"
             android:layout_width="match_parent"
